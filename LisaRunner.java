@@ -1,9 +1,3 @@
-//change font
-//change background image
-//change location of questions
-// change format for the thesis
-// change the text bubble
-
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -97,15 +91,15 @@ public class LisaRunner {
 		frame.setResizable(true);
 		panel.setVisible(true);
 		panel.setLayout(null);
-		if(question()==true) {
-			panel.setPreferredSize(new Dimension(500,800));
-		}
-		else {
+		//if(question()==true) {
+		//	panel.setPreferredSize(new Dimension(500,800));
+		//}
+		//else {
 			panel.setPreferredSize(new Dimension(800,500));
 			textbox.setLocation(10,450);
 			textbox.setSize(790,30);
 			panel.add(textbox);
-		}
+		//}
 		frame.add(panel);
 		frame.pack();
 		frame.setVisible(true);
@@ -132,7 +126,6 @@ public class LisaRunner {
 				AttributedString q = new AttributedString(lisa.askQuestion());
 				q.addAttribute(TextAttribute.FONT, font);	
 				message =q;
-				//message= lisa.askQuestion();
 				panel.repaint();
 			  //  chat.append("You: " + text + "\n");
 				textbox.setText("");
