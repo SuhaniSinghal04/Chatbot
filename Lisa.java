@@ -1,19 +1,22 @@
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.font.TextAttribute;
 import java.io.IOException;
+import java.text.AttributedString;
 import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 
 public class Lisa {
-private ArrayList<String>catchphrases;
-private ArrayList<String>responses;
-private ArrayList<String> questionList;
-private ArrayList<String> thesisList;
-private static int questionNum;
-private String question;
-public final static String PATH_PREFIX = "res/images/";
-private Image imgs;
+	private ArrayList<String>catchphrases;
+	private ArrayList<String>responses;
+	private ArrayList<String> questionList;
+	private ArrayList<String> thesisList;
+	private static int questionNum;
+	private String question;
+	public final static String PATH_PREFIX = "res/images/";
+	private Image imgs;
 
 protected  Image getImage(String fn) {
 	Image img = null;
@@ -58,9 +61,11 @@ public String askQuestion() {
 	if(questionNum<questionList.size()) {
 	question= questionList.get(questionNum);
 	questionNum++;
+	
 	return question;
 	}
 	 makeThesis();
+	 questionNum++;
 	 return getThesisList();
 }
 
@@ -76,7 +81,7 @@ public void makeThesis() {
 
 
 public void draw(Graphics g, int x, int y) {
-	g.drawImage(imgs, x, y,300,600,null);
+	g.drawImage(imgs, x, y,200,400,null);
 }
 
 public void saveResponse(String s) {
@@ -110,5 +115,6 @@ return answer;
 
 	
 }
+
 
 
