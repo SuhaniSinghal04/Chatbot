@@ -13,7 +13,7 @@ public abstract class GameObject {
 
 	private Image img;
 	private Rectangle rect;
-	private Vector velocity = new Vector(0,0);
+//	private Vector velocity = new Vector(0,0);
 	
 	
 	
@@ -60,13 +60,13 @@ public abstract class GameObject {
 		return rect;
 	}
 	
-	public Vector getVelocity() {
-		return velocity;
-	}
+//	public Vector getVelocity() {
+//		return velocity;
+//	}
 	
-	public void setVelocity(Vector v) {
-		velocity = v;
-	}
+//	public void setVelocity(Vector v) {
+//		velocity = v;
+//	}
 	
 	public void setY(int y) {
 		rect.y = y;
@@ -143,15 +143,15 @@ public abstract class GameObject {
 	
 //moving moving moving moving moving moving moving moving moving moving moving moving moving moving moving moving moving moving 
 	
-	public void move() {
-		int x = (int)Math.round(velocity.getXComponent());
-		int y = (int)Math.round(velocity.getYComponent());
-		move(x,y);
-	}
+//	public void move() {
+//		int x = (int)Math.round(velocity.getXComponent());
+//		int y = (int)Math.round(velocity.getYComponent());
+//		move(x,y);
+//	}
 	
-	public void accelerateBy(Vector v) {
-		velocity.addVector(v);
-	}
+//	public void accelerateBy(Vector v) {
+//		velocity.addVector(v);
+//	}
 	
 	
 	public void move(int x, int y) {
@@ -163,7 +163,7 @@ public abstract class GameObject {
 		rect.y += y;
 	}
 
-	public void moveHor(int x) {
+	private void moveHor(int x) {
 		rect.x += x; 
 	}
 	
@@ -174,7 +174,7 @@ public abstract class GameObject {
 	
 	
 	
-//interactions interactions	interactions interactions interactions interactions interactions interactions interactions interactions interactions interactions	
+//interactions interactions interactions interactions interactions interactions interactions interactions interactions interactions interactions interactions	
 	
 	public boolean collides(GameObject go) {
 		Rectangle other = go.getRect();
